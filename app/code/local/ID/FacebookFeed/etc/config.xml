@@ -24,6 +24,12 @@
                 <class>ID_FacebookFeed_Model</class>
             </facebookfeed>
         </models>
+        
+        <blocks>
+            <facebookfeed>
+                <class>ID_FacebookFeed_Block</class>
+            </facebookfeed>
+        </blocks>
 
         <helpers>
             <facebookfeed>
