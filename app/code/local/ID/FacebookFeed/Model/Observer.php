@@ -131,15 +131,7 @@ class ID_FacebookFeed_Model_Observer {
     $aData['mpn'] = mb_substr($oProduct->sku,0,99,'UTF-8');
 
     $aData['brand'] = strtoupper( @mb_substr($oProduct->manufacturer_value,0,99,'UTF-8') );
-
-    $_finalPrice = $oProduct->final_price;
-    if( $_finalPrice >= 60 && $_finalPrice < 200 ) {
-      $aData['title'] = $aData['brand'] . ' ' . mb_substr($oProduct->name,0,299,'UTF-8') . ' - ' . $aData['mpn'] . ' (Πληρωμή με 2 άτοκες δόσεις)';
-    } elseif( $_finalPrice >= 200 ) {
-      $aData['title'] = $aData['brand'] . ' ' . mb_substr($oProduct->name,0,299,'UTF-8') . ' - ' . $aData['mpn'] . ' (Πληρωμή με 4 άτοκες δόσεις)';
-    } else {
-      $aData['title'] = $aData['brand'] . ' ' . mb_substr($oProduct->name,0,299,'UTF-8') . ' - ' . $aData['mpn'];
-    }
+    $aData['title'] = $aData['brand'] . ' ' . mb_substr($oProduct->name,0,299,'UTF-8') . ' - ' . $aData['mpn'];
 
     if( strlen($oProduct->short_description) > 60 ) {
       $aData['description']= ucwords(strip_tags($oProduct->short_description));
